@@ -1,0 +1,277 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%----------------------------------------------------------------------------------------
+%	CUSTOM COMMANDS (Jake Ryan style)
+%----------------------------------------------------------------------------------------
+
+\newcommand{\resumeItem}[1]{
+  \item{#1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{#1} & \textit{#2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, topsep=-4pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=2pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Rajdeep (Raj) Singh} \\[7.5pt]
+\href{https://github.com/rlogger}{\raisebox{-0.05\height}\faGithub\ rlogger} \ $|$ \ 
+\href{https://raj-singh.com}{\raisebox{-0.05\height}\faGlobe \ raj-singh.com} \ $|$ \ 
+\href{mailto:rajdeeps@usc.edu}{\raisebox{-0.05\height}\faEnvelope \ rajdeeps@usc.edu} \ $|$ \ 
+\href{tel:+18582529633}{\raisebox{-0.05\height}\faMobile \ +1.858.252.9633} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+
+Planned & Master's Degree (planned) at \textbf{Stanford University} \hfill \normalsize (GPA: 4.0/4.0) \\
+
+2025 - present & Master's Degree at \textbf{University of Southern California} \hfill \normalsize (GPA: 4.0/4.0) \\
+
+2022 - 2024 & Bachelor's Degree at \textbf{University of California, Santa Cruz} \hfill (GPA: 4.0/4.0) \\ 
+
+2022 & Canyon Crest Academy \hfill  (Grades) \\
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Student Researcher}{Jan 2024 -- Mar 2025}
+      {USC Center for Artificial Intelligence (CAIS)}{Los Angeles, CA}
+      % {Stanford Artificial Intelligence Laboratory (SAIL)}{Stanford, CA} %
+      \resumeItemListStart
+        \resumeItem{Built anomaly detection pipeline for highway driving scenarios using Waymo Open Dataset, achieving 94\% precision in identifying safety-critical events and unusual traffic patterns}
+        \resumeItem{Implemented determinism testing suite for FSD neural networks, validating model reproducibility across KITTI and nuScenes datasets with 99.9\% consistency in multi-run inference}
+        \resumeItem{Optimized sensor fusion algorithms for LiDAR-camera perception, reducing inference latency by 40\% while maintaining detection mAP above 0.85 for pedestrian and vehicle classes}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Founding Engineer Intern}{July 2024 -- Sept 2024, July 2025 -- Sept 2025}
+      {Forge Rewards (YC W23)}{Palo Alto, CA}
+      \resumeItemListStart
+        \resumeItem{Architected Python/PostgreSQL backend services, reducing API response times by 40\% and serving 10K+ daily users}
+        \resumeItem{Shipped 15+ production features across full stack, collaborating with founders on product}
+        \resumeItem{Built automated testing and CI/CD pipelines, increasing deployment frequency by 3x (daily releases)}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {NSF Research Intern}{May 2023 -- July 2023}
+      {Embry-Riddle Aeronautical University}{Daytona Beach, FL}
+      \resumeItemListStart
+        \resumeItem{Researched AI safety for autonomous drone swarms, achieving 92\% detection rate for anomalous behaviors (Advisor: Prof. Yongxin Liu)}
+        \resumeItem{Developed novel swarm coordination approaches, improving accuracy by 25\% over baseline methods}
+        \resumeItem{Built simulation frameworks for route planning and anomaly detection with 10K+ test scenarios}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Hardware Engineering Co-op}{Fall 2021 -- Winter 2022}
+      {DRS Daylight Solutions}{San Diego, CA}
+      \resumeItemListStart
+        \resumeItem{Led 6-person intern team building Cable Impedance Tester, managing sub-teams and integrating hardware/software (Supervisor: Dave Snodgrass)}
+        \resumeItem{Optimized SDKs for Quantum Cascade Laser Controllers, improving performance by 35\%}
+        \resumeItem{Developed microcontroller interface library with 8b/10b encoding for 10 Mbps data transfer}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+\begin{refsection}[citations.bib]
+\nocite{*}
+\printbibliography[heading=none]
+\end{refsection}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Projects}
+
+\resumeSubHeadingListStart
+
+    \resumeProjectHeading
+        {\textbf{JAX-HDC} $|$ \emph{JAX, Python}}{\href{https://github.com/rlogger/jax-hdc}{github.com/rlogger/jax-hdc}}
+        \resumeItemListStart
+          \resumeItem{High-performance JAX library for Hyperdimensional Computing and Vector Symbolic Architectures with 100x+ speedup over NumPy implementations}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+        {\textbf{Pâro | eater} $|$ \emph{SwiftUI, iOS}}{\href{https://github.com/rlogger/paro}{github.com/rlogger/paro}}
+        \resumeItemListStart
+          \resumeItem{iOS app removing decision paralysis when ordering takeout, featuring custom UI components and restaurant API integration}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+        {\textbf{Algorithmic Trading on Small-Cap Securities}}{2020 -- 2024}
+        \resumeItemListStart
+          \resumeItem{Discovered alpha by identifying correlations in overnight gaps of small-cap securities}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+        {\textbf{Comma.AI/Comma10k}}{\href{https://github.com/commaai/comma10k}{github.com/commaai/comma10k}}
+        \resumeItemListStart
+          \resumeItem{Contributed test/train validation for OpenPilot autonomous driving system, improving lane centering accuracy}
+        \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Frameworks \& Tools} & JAX, TensorFlow, FastAPI, Kubernetes, Git \\
+\textbf{Platforms \& Libraries} & Nix, Neovim, GCP, CARLA\\
+\textbf{Languages} & Python, Lean (familiar), C/C++\\
+\end{tabularx}
+
+\vspace{10pt}
+
+\subsection*{Awards}
+\begin{itemize}[leftmargin=0.15in, itemsep=2pt]
+  \item USA Computing Olympiad Gold Rank (top 5\%)
+  \item FRC Robotics World Champion ('19)
+  \item Dean's Honors (2022-)
+\end{itemize}
+
+\vspace{10pt}
+
+\subsection*{Misc}
+\begin{itemize}[leftmargin=0.15in, itemsep=2pt]
+  \item D.E Shaw Fellow (2023)
+  \item Jane Street SEE (2023)
+\end{itemize}
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
